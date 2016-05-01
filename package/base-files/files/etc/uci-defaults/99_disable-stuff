@@ -7,4 +7,6 @@ chmod 600 /etc/dropbear/*
 /etc/init.d/dnsmasq disable
 /etc/init.d/firewall stop
 /etc/init.d/firewall disable
+/etc/init.d/odhcpd stop
+/etc/init.d/odhcpd disable
 exit 0
