@@ -1,0 +1,23 @@
+#!/bin/sh
+uci set network.batnet=interface
+uci set network.batnet.mtu='1532'
+uci set network.batnet.proto='batadv'
+uci set network.batnet.mesh='bat0'
+uci set network.bat=interface
+uci set network.bat.ifname='bat0'
+uci set network.bat.proto='none'
+uci set network.lan.ifname='eth0.1 bat0'
+
+uci delete wireless.radio0.disabled
+uci delete wireless.@wifi-iface[0]
+uci delete wireless.wifi-iface
+uci set wireless.wmesh=wifi-iface
+uci set wireless.wmesh.device='radio0'
+uci set wireless.wmesh.ifname='adhoc0'
+uci set wireless.wmesh.network='batnet'
+uci set wireless.wmesh.mode='adhoc'
+uci set wireless.wmesh.ssid='mesh'
+uci set wireless.wmesh.mcast_rate='18000'
+uci set wireless.wmesh.bssid='02:CA:FE:CA:CA:40'
+uci commit
+exit 0
