@@ -1,0 +1,10 @@
+#!/bin/sh
+chmod 700 /etc/dropbear
+chmod 600 /etc/dropbear/*
+/etc/init.d/qos stop
+/etc/init.d/qos disable
+/etc/init.d/dnsmasq stop
+/etc/init.d/dnsmasq disable
+/etc/init.d/firewall stop
+/etc/init.d/firewall disable
+exit 0
