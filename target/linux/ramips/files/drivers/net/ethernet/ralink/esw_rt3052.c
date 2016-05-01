@@ -1360,7 +1360,7 @@ static const struct switch_dev_ops esw_ops = {
 static struct rt305x_esw_platform_data rt3050_esw_data = {
 	/* All ports are LAN ports. */
 	.vlan_config            = RT305X_ESW_VLAN_CONFIG_NONE,
-	.reg_initval_fct2       = 0x00d6500c,
+	.reg_initval_fct2       = 0x0002500c,
 	/*
 	 * ext phy base addr 31, enable port 5 polling, rx/tx clock skew 1,
 	 * turbo mii off, rgmi 3.3v off
